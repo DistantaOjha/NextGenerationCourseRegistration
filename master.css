@@ -1,0 +1,24 @@
+:root{                         /* Global variable storage */
+    --blue: rgb(#1948B4);    /* Gettysburg official blue value */
+    --orange: rgb(#fe6301);  /* Gettysburg official orange value */
+}
+
+.titleBar {
+    background-color: var(--blue);
+    text-align: center;
+    border: 10px solid var(--blue);
+}
+.menuColumn {
+    background-color: var(--orange);
+    text-align: center;
+    border: 10px solid var(--orange);
+}
+.mainBox {
+    background-color: white;
+}
+button {
+    background-color: gray
+}
+.infoWindow {
+    background-color:gray;
+}
