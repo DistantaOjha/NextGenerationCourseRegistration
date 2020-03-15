@@ -5,9 +5,9 @@
   <title>Student Course Regsitration 2.0</title>
 </head>
 
-<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="../css/dashboard.css">
 <?php
-    include("php/bootstrap.php");
+    include("../php/bootstrap.php");
 ?>
 
 <body>

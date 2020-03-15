@@ -21,17 +21,17 @@
             </DIV>
             <DIV class="row">
                 <DIV class="col-md-4 menuColumn">
-                    <form action = "studentLand.php">
+                    <form action = "studentPages/studentLand.php">
                         <button type="submit">Student</button>
                     </form>
                 </DIV>
                 <DIV class="col-md-4 menuColumn">
-                    <form action = "instructorLand.php">
+                    <form action = "instructorPages/instructorLand.php">
                         <button type="submit">Instructor</button>
                     </form>
                 </DIV>
                 <DIV class="col-md-4 menuColumn">
-                    <form action = "registrarLand.php">
+                    <form action = "registrarPages/registrarLand.php">
                         <button type="submit">Registrar</button>
                     </form>
                 </DIV>
