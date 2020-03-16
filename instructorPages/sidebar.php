@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-sm">
-      <div class = "textAlignLeft"> Student Username </div>
+      <div class = "textAlignLeft"> Instructor Username </div>
     </div>
     
     <div class="col-sm">
