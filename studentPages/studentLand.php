@@ -8,14 +8,15 @@
 <link rel="stylesheet" href="../css/dashboard.css">
 <?php
     include("../php/bootstrap.php");
-    include_once("proj.php");
-    showUserInformation($db);
+   
 ?>
 
 <body>
 
 <?php
   include('sidebar.php');
+  include_once("proj.php");
+  showUserInformation($db);
 ?>
 
 <div class = "main">
