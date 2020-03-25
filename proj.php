@@ -22,8 +22,8 @@ function showUserInformation($db)
         $lname = $row['lname'];
  
         
-        $str1 = "<TR><TD>ID: $id</TD><TD></BR>Class Year: $year</TD><TD></BR>Name: $fname</TD><TD>$mi</TD><TD>  $lname</TD></BR></TR>\n";
-        print $str1;
+      $str1 = "<TR><TD>Name: $fname</TD><TD>$mi</TD><TD>$lname</TD><TD></BR>ID: $id</TD><TD></BR>Class Year: $year</TD></BR></TR>\n";
+      print $str1;
 }
 
 //select student's majors from "Major" table(need to be shown)
