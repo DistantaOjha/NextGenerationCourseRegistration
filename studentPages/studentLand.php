@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="../css/dashboard.css">
 <?php
     include("../php/bootstrap.php");
+    include_once("proj.php");
+    showUserInformation($db);
 ?>
 
 <body>
