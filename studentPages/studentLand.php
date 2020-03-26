@@ -8,19 +8,20 @@
 <link rel="stylesheet" href="../css/dashboard.css">
 <?php
     include("../php/bootstrap.php");
-   
+    include_once("../../php/db_connect.php");
+    include_once("php/studentUtils.php");
 ?>
 
 <body>
 
 <?php
   include('sidebar.php');
-  include_once("proj.php");
-  showUserInformation($db);
 ?>
 
 <div class = "main">
-This is student land page
+   <?php 
+      echo(showUserInformation($db));
+   ?>
 </div>
 
 </body>
