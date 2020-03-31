@@ -13,9 +13,9 @@
 </div>
 
 <div class="sidenav">
-  <a href= "">Home</a>
-  <a href="">Courses Teaching</a>
-  <a href="">Courses Taught</a>
-  <a href="">Settings</a>
-  <a href="">Students</a>
+  <a href= "instructorLand.php">Home</a>
+  <a href="instructorAdd.php">Courses Teaching</a>
+  <a href="instructorLand.php">Courses Taught</a>
+  <a href="instructorLand.php">Settings</a>
+  <a href="instructorLand.php">Students</a>
 </div>
