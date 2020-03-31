@@ -21,21 +21,45 @@
             </DIV>
             <DIV class="row">
                 <DIV class="col-md-4 menuColumn">
-                    <form action = "studentPages/studentLand.php">
-                        <button type="submit">Student</button>
-                    </form>
+                        <button onClick = "myFunction('student', 'instructor', 'registrar')">Student</button>
                 </DIV>
                 <DIV class="col-md-4 menuColumn">
-                    <form action = "instructorPages/instructorLand.php">
-                        <button type="submit">Instructor</button>
-                    </form>
+                        <button onClick = "myFunction('instructor', 'student', 'registrar')">Instructor</button>
                 </DIV>
                 <DIV class="col-md-4 menuColumn">
-                    <form action = "registrarPages/registrarLand.php">
-                        <button type="submit">Registrar</button>
-                    </form>
+                    <button onClick = "myFunction('registrar', 'student', 'instructor')">Registrar</button>
                 </DIV>
             </DIV>
+
+            <div id="student" style="display: none;">
+                <?php
+                    include_once("logins/studentLogin.php");
+                ?>
+            </div>
+
+            <div id="instructor" style="display: none;">
+                <?php
+                    include_once("logins/instructorLogin.php");
+                ?>
+            </div>
+
+            <div id="registrar" style="display: none;">
+                <?php
+                    include_once("logins/adminLogin.php");
+                ?>
+            </div>
         </DIV>
+        <script>
+            function myFunction(showDivName, hideDivName1, hideDivName2) {
+                var show = document.getElementById(showDivName);
+                if (show.style.display === "none") {
+                    show.style.display = "block";
+                    var hide1 = document.getElementById(hideDivName1);
+                    hide1.style.display = "none";
+                    var hide2 = document.getElementById(hideDivName2);
+                    hide2.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>
