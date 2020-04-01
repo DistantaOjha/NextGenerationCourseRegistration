@@ -1,4 +1,12 @@
 <?php
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+?>
+
+
+<?php
 include_once("../php/dbconnect.php");
 print_r($_POST);
 
