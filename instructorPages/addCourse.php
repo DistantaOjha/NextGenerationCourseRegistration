@@ -7,7 +7,6 @@ if(!isset($_SESSION))
 
 
 <?php
-include_once("../php/dbconnect.php");
 print_r($_POST);
 
 $sid   = $_POST['sectionID'];
@@ -22,6 +21,9 @@ $cap   = $_POST['cap'];
 $qStr = "INSERT INTO Sections(sectionID, courseID, instructorID, term, year, time, days, cap) VALUE('$sid', '$cid', '$iid', '$term', '$year', '$time', '$days', '$cap')";
 
 print "<P>$qStr</P>";
+
+include_once("../php/dbconnect.php");
+
 $qRes = $db->query($qStr);
 
 if($qRes != FALSE)
