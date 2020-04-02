@@ -7,7 +7,8 @@ if(!isset($_SESSION))
 <?php
 print_r($_POST);
 $department   = $_POST['departmentName'];
-$qStr = "INSERT INTO Departments(headID, name) VALUE (-1,'$department')";
+$chairID   = $_POST['chairID'];
+$qStr = "INSERT INTO Departments(headID, name) VALUE ($chairID,'$department')";
 print "<P>$qStr</P>";
 include_once("../../php/dbconnect.php");
 $qRes = $db->query($qStr);

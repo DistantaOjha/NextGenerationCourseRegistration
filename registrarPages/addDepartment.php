@@ -63,6 +63,7 @@ td, th {
 <link rel="stylesheet" href="../css/dashboard.css">
 <?php
     include("../php/bootstrap.php");
+    include_once("../php/dbconnect.php");
 ?>
 
 <body>
@@ -80,7 +81,30 @@ td, th {
         </br>
         <input type="text" class= "addInputText" placeholder="Enter Department Name" name="departmentName">
         </br>
+        <label for="chairID" class = "addLabel"><b>Choose chair:</b></label>
+        <select id="chairID" name ="chairID">
+          <option value ='-1'>None for Now</option>
+
+          <?php
+          $qStr = "SELECT * FROM Instructors;";
+          $qRes = $db->query($qStr);
+          if($qRes != FALSE){
+            while($row = $qRes->fetch()){
+              $insID = $row['instructorID'];
+              $fname = $row['fname'];
+              $mi = $row['mi'];
+              $lname = $row['lname'];
+              $str = "<option value=$insID>$fname-$mi-$lname</option>\n";
+              print $str;
+            }
+          }
+          ?>
+
+        </select>
+        </br>
         <button type="submit" class = "addButton">Add Department</button>
+        </br>
+        </br>
   </div>
 </form>
 </hr>
@@ -89,7 +113,6 @@ td, th {
 <?php
 $str = "<TR><TD>deptID</TD><TD>Dep Name</TD><TD>chairID</TD></TR>\n";
 print $str;
-include_once("../php/dbconnect.php");
 $qStr = "SELECT * FROM Departments;";
 $qRes = $db->query($qStr);
 if($qRes != FALSE){
