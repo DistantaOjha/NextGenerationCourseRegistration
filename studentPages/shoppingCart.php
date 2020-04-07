@@ -62,6 +62,15 @@ td, th {
   padding: 8px;
 }
 
+.searchButton{
+  background-color: blue;
+  color: white
+}
+
+.searchButton:hover{
+  opacity: 0.5
+}
+
   </style>
 
 </head>
@@ -89,20 +98,20 @@ This is shopping cart page
             </br>
             List by preference. <br>
             1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="firstCourse1">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=1.1"><i class="fa fa-search"></i></a>
             <br>
             2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="firstCourse2">
-               <button><i class="fa fa-search"></i></button>
+            <a href = "shoppingCartUtils/searchClasses.php?placeVal=1.2"><i class="fa fa-search"></i></a>
           </td>
           <td>
             <label for="secondCourse" class = "addLabel"><b>Place 2</b></label>
             </br>
             List by preference. <br>
             1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="secondCourse1">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=2.1"><i class="fa fa-search"></i></a>
             <br>
             2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="secondCourse2">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=2.2"><i class="fa fa-search"></i></a>
           </td>
         </tr>
 
@@ -112,20 +121,20 @@ This is shopping cart page
             </br>
             List by preference. <br>
             1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="thirdCourse1">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=3.1"><i class="fa fa-search"></i></a>
             <br>
             2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="thirdCourse2">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=3.2"><i class="fa fa-search"></i></a>
           </td>
           <td>
             <label class = "addLabel"><b>Place 4</b></label>
             </br>
             List by preference. <br>
             1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="fourthCourse1">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=4.1"><i class="fa fa-search"></i></a>
             <br>
             2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="fourthCourse2">
-               <button><i class="fa fa-search"></i></button>
+               <a href = "shoppingCartUtils/searchClasses.php?placeVal=4.2"><i class="fa fa-search"></i></a>
           </td>
         </tr>
         </table>
