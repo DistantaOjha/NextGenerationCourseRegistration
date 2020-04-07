@@ -28,13 +28,13 @@ if(!isset($_SESSION))
             </DIV>
             <DIV class="row">
                 <DIV class="col-md-4 menuColumn">
-                        <button onClick = "myFunction('student', 'instructor', 'registrar')">Student</button>
+                        <button onClick = "myFunction('student', 'instructor', 'registrar')" class = "textButton">Student</button>
                 </DIV>
                 <DIV class="col-md-4 menuColumn">
-                        <button onClick = "myFunction('instructor', 'student', 'registrar')">Instructor</button>
+                        <button onClick = "myFunction('instructor', 'student', 'registrar')" class = "textButton">Instructor</button>
                 </DIV>
                 <DIV class="col-md-4 menuColumn">
-                    <button onClick = "myFunction('registrar', 'student', 'instructor')">Registrar</button>
+                    <button onClick = "myFunction('registrar', 'student', 'instructor')" class = "textButton">Registrar</button>
                 </DIV>
             </DIV>
 

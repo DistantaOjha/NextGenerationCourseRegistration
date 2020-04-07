@@ -12,7 +12,7 @@ if(!isset($_SESSION))
   <title>Student Course Regsitration 2.0</title>
 </head>
 
-<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/master.css">
 <?php
     include("../php/bootstrap.php");
     include_once("php/studentUtils.php");
@@ -21,7 +21,7 @@ if(!isset($_SESSION))
 <body>
 
 <?php
-  include('sidebar.php');
+  include('menubar.php');
 ?>
 
 <div class = "main">

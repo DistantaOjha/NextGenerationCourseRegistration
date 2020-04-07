@@ -13,7 +13,7 @@ if(!isset($_SESSION))
   <title>Student Course Regsitration 2.0</title>
 </head>
 
-<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/master.css">
 <?php
     include("../php/bootstrap.php");
 ?>
@@ -21,12 +21,10 @@ if(!isset($_SESSION))
 <body>
 
 <?php
-  include('sidebar.php');
+  include('menubar.php');
 ?>
 
 <div class = "main">
-Courses offered this semester: TODO
-
 <H2>Add a Course</H2>
 
 <FORM   name="fmAdd" method="POST" action="addCourse.php">

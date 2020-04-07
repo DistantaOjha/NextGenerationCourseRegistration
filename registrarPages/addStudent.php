@@ -60,7 +60,7 @@ td, th {
 
 </head>
 
-<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/master.css">
 <?php
     include("../php/bootstrap.php");
     include_once("../php/dbconnect.php");
@@ -69,7 +69,7 @@ td, th {
 <body>
 
 <?php
-  include('sidebar.php');
+  include('menubar.php');
 ?>
 
 <div class = "main">

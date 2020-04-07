@@ -1,24 +1,118 @@
 :root{                         /* Global variable storage */
     --blue: rgb(#1948B4);    /* Gettysburg official blue value */
     --orange: rgb(#fe6301);  /* Gettysburg official orange value */
+    --loginPad: 5px;
+    --loginMarg: 8px;
 }
 
 .titleBar {
     background-color: var(--blue);
     text-align: center;
-    border: 10px solid var(--blue);
+    width: 100%;
+    padding: 10px;
 }
 .menuColumn {
     background-color: var(--orange);
     text-align: center;
-    border: 10px solid var(--orange);
+    padding: 10px;
+    
 }
 .mainBox {
     background-color: white;
 }
-button {
-    background-color: gray
+.textButton {
+    background-color: var(--orange);
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    width: 100%;
 }
+
+.dropButton {
+    background-color: var(--orange);
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.dropButtonContent {
+    background-color: var(--blue);
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    width: 100%;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropInnerButton {
+    background-color: var(--blue);
+    text-align: left;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    width: 100%;
+}
+
+.dropButton:hover .dropButtonContent {display: block;}
+
+.loginButton {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-left: var(--loginMarg);
+    width: 75%;
+}
+
+.textButton:hover .loginButton:hover{
+    opacity: 0.8;
+}
+
+.loginInputText, .loginInputPass {
+  width: 75%;
+  padding: 12px 20px;
+  margin: var(--loginMarg);
+  border: 1px solid #ccc;
+}
+
+.loginInputText:hover, .loginInputPass:hover {
+    border: 1px solid rgb(11, 146, 224);
+}
+
+.loginLabel{
+    margin: var(--loginMarg);
+    padding: var(--loginPad);  
+}
+
+.loginForm{
+    border-left:  10px solid;
+    border-color: var(--orange);
+    width: 25%;
+    height: 50%; 
+}
+
+.loginTitle{
+    font-size: 16pt;
+    font-weight: bold;
+    margin: var(--loginMarg);
+    padding: var(--loginPad);
+}
+
 .infoWindow {
     background-color:gray;
 }

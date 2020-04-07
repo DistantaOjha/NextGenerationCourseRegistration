@@ -1,4 +1,4 @@
-<div class="titlebar">
+<div class="titleBar">
 
   <div class="row">
     <div class="col-sm">
