@@ -63,12 +63,13 @@ td, th {
 <link rel="stylesheet" href="../css/master.css">
 <?php
     include("../php/bootstrap.php");
+    include_once("../php/dbconnect.php");
 ?>
 
 <body>
 
 <?php
-  include('menu.php');
+  include('menubar.php');
 ?>
 
 <div class = "main">
