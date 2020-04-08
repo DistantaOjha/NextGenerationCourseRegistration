@@ -78,6 +78,7 @@ td, th {
 <link rel="stylesheet" href="../css/master.css">
 <?php
     include("../php/bootstrap.php");
+    include_once("../php/dbconnect.php");
 ?>
 
 <body>
@@ -89,7 +90,71 @@ td, th {
 
 <div class = "main">
 This is shopping cart page
-<form action="#" method="post" class = "addForm">
+
+<?php
+    $studentID = $_SESSION['username'];
+    $regisSection = $db->query("SELECT * FROM ShoppingCart WHERE studentID = $studentID;");
+    
+    $regisInsName = array();
+    $regisTime = array();
+    $regisDays = array();
+    $regisCName = array();
+    
+    
+    if($regisSection != FALSE){
+      while($regisRow = $regisSection->fetch()){
+        $placeVal = $regisRow['placePref'];
+        #Get the section information
+        $sectionID = $regisRow['sectionID'];
+        $sectionRes = $db->query("SELECT * FROM Sections WHERE sectionID = $sectionID;");
+        if($sectionRes != FALSE){
+          $sectionInfo = $sectionRes->fetch();
+          
+          $secCourseID = $sectionInfo['courseID'];
+          $coursName = "NA";
+          $regisCourse = $db->query("SELECT * FROM Courses WHERE courseID = $secCourseID;");
+          if($regisCourse != FALSE){
+            $courseTableRow = $regisCourse->fetch();
+            $courseName = $courseTableRow['name'];
+          }
+          
+          $regisCName[$placeVal] = $courseName;
+          
+          
+          #Get the instructor infromation
+          $secInstructorID = $sectionInfo['instructorID'];
+          //$insQuer = "SELECT * FROM Instructors WHERE instructorID = $secInstructorID;";
+          //print $insQuer;
+          $insRes = $db->query("SELECT * FROM Instructors WHERE instructorID = $secInstructorID;");
+          $instructorName = "NA";
+          if($insRes != FALSE){
+            $courseInsRow = $insRes->fetch();
+            //print_r($courseInsRow);
+            $instructorName = $courseInsRow['lname'] . ', ' . $courseInsRow['fname'] ;
+          }
+          $regisInsName[$placeVal] = $instructorName;
+          
+          $secTime = $sectionInfo['time'];
+          $regisTime[$placeVal] = $secTime; 
+          
+          $secDays = $sectionInfo['days'];
+          $regisDays[$placeVal] = $secDays;
+          
+        }
+        //print $placeVal . " ---- " . $courseName . "-----" .  $instructorName;
+      }
+    }
+?>
+<?php
+//print_r($regisInsName);
+//print('<br>');
+//print_r($regisTime);
+//print('<br>');
+//print_r($regisDays);
+//print('<br>');
+//print_r($regisCName);
+?>
+
     <div>
         </br>
         <table style="width:100%">
@@ -97,22 +162,40 @@ This is shopping cart page
           <td>
             <label class = "addLabel"><b>Place 1</b></label>
             </br>
-            List by preference. <br>
-            1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="firstCourse1">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=1.1"><i class="fa fa-search"></i></a>
-            <br>
-            2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="firstCourse2">
-            <a href = "shoppingCartUtils/searchClasses.php?placeVal=1.2"><i class="fa fa-search"></i></a>
+            Listed by preference. <br>
+            
+            <table>
+              <tr><th>Course Name</th><th>Days</th><th>time</th><th>Faculty</th></tr>
+              <?php
+                print "<tr><td>".$regisCName['1.1']."</td><td>".$regisDays['1.1']."</td><td>".$regisTime['1.1']."</td><td>".$regisInsName['1.1']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=1.1"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+                
+                print "<tr><td>".$regisCName['1.2']."</td><td>".$regisDays['1.2']."</td><td>".$regisTime['1.2']."</td><td>".$regisInsName['1.2']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=1.2"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+              ?>
+            </table>
           </td>
+          
           <td>
-            <label for="secondCourse" class = "addLabel"><b>Place 2</b></label>
+            <label class = "addLabel"><b>Place 2</b></label>
             </br>
             List by preference. <br>
-            1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="secondCourse1">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=2.1"><i class="fa fa-search"></i></a>
-            <br>
-            2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="secondCourse2">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=2.2"><i class="fa fa-search"></i></a>
+            
+            <table>
+              <tr><th>Course Name</th><th>Days</th><th>time</th><th>Faculty</th></tr>
+              <?php
+                print "<tr><td>".$regisCName['2.1']."</td><td>".$regisDays['2.1']."</td><td>".$regisTime['2.1']."</td><td>".$regisInsName['2.1']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=2.1"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+                
+                print "<tr><td>".$regisCName['2.2']."</td><td>".$regisDays['2.2']."</td><td>".$regisTime['2.2']."</td><td>".$regisInsName['2.2']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=2.2"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+              ?>
+            </table>
+          
           </td>
         </tr>
 
@@ -120,30 +203,45 @@ This is shopping cart page
           <td>
             <label class = "addLabel"><b>Place 3</b></label>
             </br>
-            List by preference. <br>
-            1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="thirdCourse1">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=3.1"><i class="fa fa-search"></i></a>
-            <br>
-            2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="thirdCourse2">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=3.2"><i class="fa fa-search"></i></a>
+            Listed by preference. <br>
+            
+            <table>
+              <tr><th>Course Name</th><th>Days</th><th>time</th><th>Faculty</th></tr>
+              <?php
+                print "<tr><td>".$regisCName['3.1']."</td><td>".$regisDays['3.1']."</td><td>".$regisTime['3.1']."</td><td>".$regisInsName['3.1']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=3.1"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+                
+                print "<tr><td>".$regisCName['3.2']."</td><td>".$regisDays['3.2']."</td><td>".$regisTime['3.2']."</td><td>".$regisInsName['3.2']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=3.2"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+              ?>
+            </table>
           </td>
+          
           <td>
-            <label class = "addLabel"><b>Place 4</b></label>
+            <label class = "addLabel"><b>Place 2</b></label>
             </br>
             List by preference. <br>
-            1. <input type="text" class= "addInputText" placeholder="Enter First Choice" name="fourthCourse1">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=4.1"><i class="fa fa-search"></i></a>
-            <br>
-            2. <input type="text" class= "addInputText" placeholder="Enter Second Choice" name="fourthCourse2">
-               <a href = "shoppingCartUtils/searchClasses.php?placeVal=4.2"><i class="fa fa-search"></i></a>
+            
+            <table>
+              <tr><th>Course Name</th><th>Days</th><th>time</th><th>Faculty</th></tr>
+              <?php
+                print "<tr><td>".$regisCName['4.1']."</td><td>".$regisDays['4.1']."</td><td>".$regisTime['4.1']."</td><td>".$regisInsName['4.1']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=4.1"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+                
+                print "<tr><td>".$regisCName['4.2']."</td><td>".$regisDays['4.2']."</td><td>".$regisTime['4.2']."</td><td>".$regisInsName['4.2']."</td>";
+                print '<td><a href = "shoppingCartUtils/searchClasses.php?placeVal=4.2"><i class="fa fa-search"></i></a></td>';
+                print '</tr>';
+              ?>
+            </table>
+          
           </td>
         </tr>
         </table>
         </br>
-        <i>Note: Once you submit you cannot change your choices until after you are registered for classes.</i>
-        <button type="submit" class = "addButton">Submit Courses</button>
   </div>
-</form>
 </div>
 
 </body>

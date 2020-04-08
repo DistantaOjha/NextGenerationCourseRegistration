@@ -1,5 +1,5 @@
 
-<form action="studentPages/studentLand.php" method="post" class = "loginForm">
+<form action="logins/php/loginStuBackEnd.php" method="POST" class = "loginForm">
     <div>
         <p class = "loginTitle">Welcome Student</p>
         </br>
