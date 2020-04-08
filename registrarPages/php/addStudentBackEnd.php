@@ -32,5 +32,5 @@ include_once("../php/dbconnect.php");
      print "Successfully add student";
 
    }
-
 ?>
+<a href="../addStudent.php"><h1> Go BACK <h1></a>
