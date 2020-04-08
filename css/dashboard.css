@@ -1,0 +1,56 @@
+
+
+.titlebar {
+    background-color: blue;
+    z-index: 2;
+    position: fixed;
+    height: 25px;
+    width: 100%;
+}
+
+.textAlignRight{
+    text-align: right;
+    padding-right: 10px;
+    color: #eee;
+}
+
+.textAlignLeft{
+    padding-left: 10px;
+    text-align: left;
+    color: #eee;
+}
+
+.sidenav {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 30px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+
+  
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 10px;
+    color: #2196F3;
+    display: block;
+}
+  
+.sidenav a:hover {
+    color: #064579;
+}
+  
+.main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    padding: 30px 80px;
+}
+  
+@media screen and (max-height: 1000px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 10px;}
+}
