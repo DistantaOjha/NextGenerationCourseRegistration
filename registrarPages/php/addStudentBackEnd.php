@@ -23,12 +23,12 @@ function addStudent($db, $input)
 
 //insert students' majors into major table
 
-   $qStr2 = "INSERT INTO Majors (studentID, deptID) VALUES (0,'$major')";
+   $qStr2 = "INSERT INTO Majors (deptID) VALUES ('$major')";
    $qRes2 = $db->query($qStr2);
 
 //insert students' minors into minor table
 
-   $qStr3 = "INSERT INTO Minors (studentID, deptID) VALUES (0,'$minor')";
+   $qStr3 = "INSERT INTO Minors (deptID) VALUES ('$minor')";
    $qRes3 = $db->query($qStr3);
 
    if($qRes1 != FALSE && $qRes2 != FALSE && $qRes3 != FALSE)
