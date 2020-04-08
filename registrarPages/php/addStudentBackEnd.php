@@ -18,7 +18,7 @@ function addStudent($db, $input)
    $res = FALSE;
 
 //insert into student table
-   $qStr1 = "INSERT INTO Students (studentID, year, fname, mi, lname) VALUES (0,'$year','$fname','$mi','$lname')";
+   $qStr1 = "INSERT INTO Students (year, fname, mi, lname) VALUES ('$year','$fname','$mi','$lname')";
    $qRes1 = $db->query($qStr1);
 
 //insert students' majors into major table
