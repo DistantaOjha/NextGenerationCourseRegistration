@@ -1,6 +1,6 @@
 <?php
 
-include_once("db_connect.php");
+include_once("../php/dbconnect.php");
 
 function addStudent($db, $input)
 {
