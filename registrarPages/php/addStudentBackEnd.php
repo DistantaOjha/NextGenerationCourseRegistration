@@ -2,20 +2,15 @@
 
 include_once("../php/dbconnect.php");
 
-function addStudent($db, $input)
-{
+   $fname = $_POST['stuFName'];
+   $mi    = $_POST['stuMName'];
+   $lname = $_POST['stuLName'];
 
-   $fname = $input['stuFName'];
-   $mi    = $input['stuMName'];
-   $lname = $input['stuLName'];
-
-   $year  = $input['stuYear'];
+   $year  = $_POST['stuYear'];
 
 //select deptID
-   $major = $input['major'];
-   $minor = $input['minor'];
-
-   $res = FALSE;
+   $major = $_POST['major'];
+   $minor = $_POST['minor'];
 
 //insert into student table
    $qStr1 = "INSERT INTO Students (year, fname, mi, lname) VALUES ('$year','$fname','$mi','$lname')";
@@ -34,10 +29,8 @@ function addStudent($db, $input)
    if($qRes1 != FALSE && $qRes2 != FALSE && $qRes3 != FALSE)
    {
 
-      $res = TRUE;
+     print "Successfully add student";
 
    }
 
-   return $res;
-}
 ?>
