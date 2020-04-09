@@ -22,6 +22,15 @@ if(!isset($_SESSION))
 
 <?php
   include('menubar.php');
+  
+  // the message
+  $major = $_POST['major'];
+  $minor = $_POST['minor'];
+  $msg = "Alex would like to change his/her major/minor.\nMajor Change: $major \nMinor Change: $minor";
+  
+  // send email
+  mail("jeteay01@gettysburg.edu","Student Major/Minor Change", $msg);
+  
 ?>
 
 <div class = "main">
@@ -33,15 +42,14 @@ if(!isset($_SESSION))
 
 <BR>
 
-Declare/change major
+Email sent! Wait for instructor confirmation.
 
-<FORM name="fmMajMin" method="POST" action="changeMajMin.php">
-<INPUT type="text" name="major" placeholder="Enter major"/>
+<FORM name="fmMajMin" method="POST" action="studentLand.php">
+
 <BR>
-<INPUT type="text" name="minor" placeholder="Enter minor"/>
-<BR>
-<BR>
-<INPUT type="submit" value="Change major/minor"/>
+
+<INPUT type="submit" value="Back to home"/>
+
 </FORM>
 
 </body>
