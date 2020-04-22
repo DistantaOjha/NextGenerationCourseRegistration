@@ -17,6 +17,7 @@
   <a href= "addDepartment.php">Add Department</a>
   <a href= "addInstructor.php">Add Instructor</a>
   <a href= "addStudent.php">Add Student</a>
+  <a href= "RegistrarSearchCourse.php">Search Courses</a>
   <a href="">All Courses</a>
   <a href="">All Students</a>
   <a href="">All Faculties</a>
