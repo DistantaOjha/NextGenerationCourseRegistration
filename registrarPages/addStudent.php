@@ -73,6 +73,9 @@ td, th {
 ?>
 
 <div class = "main">
+<DIV class="container">
+  <DIV class="row">
+    <DIV class="col-md-12">
 <h3>Add Student</h3>
 <form action="php/addStudentBackEnd.php" method="post" class = "addForm">
     <div>
@@ -156,6 +159,9 @@ if($qRes != FALSE){
 }
 ?>
 </TABLE>
+    </DIV>
+  </DIV>
+</DIV>
 </div>
 </body>
 </html>

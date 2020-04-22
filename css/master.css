@@ -3,7 +3,7 @@
     --orange: rgb(#fe6301);  /* Gettysburg official orange value */
     --loginPad: 5px;
     --loginMarg: 8px;
-    --formPad: 10px;
+    --formPad: 6px;
 }
 
 .titleBar {
@@ -20,7 +20,11 @@
 }
 .mainBox {
     background-color: white;
+    text-align: center;
+    font-size: 18pt;
+    padding: 25pt;
 }
+
 .textButton {
     background-color: var(--orange);
     font-style: oblique;
@@ -142,12 +146,12 @@
 }
 
 .formLabel{
-    font-size: 16pt;
+    font-size: 14pt;
     padding: var(--formPad);
 }
 
 .formText{
-    font-size: 16pt;
+    font-size: 14pt;
     margin-right: 10px;
     margin-left: 10px;
 }

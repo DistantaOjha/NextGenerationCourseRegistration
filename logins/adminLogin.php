@@ -1,6 +1,7 @@
 
 <form action="registrarPages/registrarLand.php" method="post" class = "loginForm">
     <div>
+        <input type="hidden" name="table" value="regUsers">
         <p class = "loginTitle">Welcome Registrar</p>
         </br>
         <label for="ulogin" class = "loginLabel"><b>Username</b></label>
