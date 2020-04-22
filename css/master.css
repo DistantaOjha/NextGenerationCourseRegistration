@@ -3,6 +3,7 @@
     --orange: rgb(#fe6301);  /* Gettysburg official orange value */
     --loginPad: 5px;
     --loginMarg: 8px;
+    --formPad: 10px;
 }
 
 .titleBar {
@@ -80,7 +81,7 @@
 }
 
 .textButton:hover .loginButton:hover{
-    opacity: 0.8;
+    opacity: .8; 
 }
 
 .loginInputText, .loginInputPass {
@@ -115,4 +116,38 @@
 
 .infoWindow {
     background-color:gray;
+}
+
+.stdForm{
+    border:  10px solid; 
+    border-color: var(--orange);
+}
+
+.formBtn{
+    font-size: 14pt;
+    color: white;
+    font-style: oblique;
+    font-weight: bold;
+    background-color: var(--blue);
+    margin: 3.5%;
+    border: none;
+    width: 42%;
+}
+
+.formTitle{
+    font-size: 24pt;
+    font-weight: bold;
+    margin: var(--formPad);
+    padding: var(--formPad);
+}
+
+.formLabel{
+    font-size: 16pt;
+    padding: var(--formPad);
+}
+
+.formText{
+    font-size: 16pt;
+    margin-right: 10px;
+    margin-left: 10px;
 }

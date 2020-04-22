@@ -25,24 +25,39 @@ if(!isset($_SESSION))
 ?>
 
 <div class = "main">
-<H2>Add a Course</H2>
+<H2 class="formTitle">Add a Course</H2>
 
-<FORM   name="fmAdd" method="POST" action="addCourse.php">
+<FORM class="stdForm" name="fmAdd" method="POST" action="addCourse.php">
 
-Section ID: <INPUT type="number" name="sectionID"/> <br>
-Course ID: <INPUT type="number" name="courseID"/> <br>
-Your Instructor ID: <INPUT type="number" name="instructorID"/> <br>
-Term: <INPUT type="radio" id="f" name="term" value="fall">
-      <label for="f">Fall</label>
+<p class = "formLabel">
+  Section ID: <INPUT type="number" class="formText" name="sectionID"/>
+  Course ID: <INPUT type="number" class="formText" name="courseID"/>
+  Your Instructor ID: <INPUT type="number" class="formText" name="instructorID"/>
+</p>
+<p class = "formLabel">
+  Year: <INPUT type="number" class="formText" name="year"/> 
+  Term: <INPUT type="radio" id="f" name="term" value="fall">
+      <label for="f" class = "formLabel">Fall</label>
       <INPUT type="radio" id="s" name="term" value="spring">
-      <label for="s">Spring</label><br>
-Year: <INPUT type="number" name="year"/> <br>
-Time: <INPUT type="time" name="time"/> <br>
-Days: <INPUT type="text" name="days" placeholder="M/T/W/R/F"/> <br>
-Capacity: <INPUT type="number" name="cap"/> <br>
+      <label for="s" class = "formLabel">Spring</label>
+</p>
+<p class = "formLabel">
+  Time: <INPUT type="time" class="formText" name="time"/>
+  Days: <input type="checkbox" class="formText" id="m" name="days[]" value="M">
+      <label for="m"> Monday </label>
+      <input type="checkbox" class="formText" id="t" name="days[]" value="T">
+      <label for="t"> Tuesday </label>
+      <input type="checkbox" class="formText" id="w" name="days[]" value="W">
+      <label for="w"> Wednesday </label>
+      <input type="checkbox" class="formText" id="r" name="days[]" value="R">
+      <label for="r"> Thursday </label>
+      <input type="checkbox" class="formText" id="f" name="days[]" value="F">
+      <label for="f"> Friday </label>
+</p>
+<p class = "formLabel">Capacity: <INPUT type="number" class="formText" name="cap"/> </p>
 <br>
-<INPUT type="reset"  value="Clear"/>
-<INPUT type="submit" value="Send" />
+<INPUT class="formBtn" type="reset"  value="Clear"/>
+<INPUT class="formBtn" type="submit" value="Send" />
 
 </FORM>
 

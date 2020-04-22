@@ -15,8 +15,13 @@ $iid   = $_POST['instructorID'];
 $term  = $_POST['term'];
 $year  = $_POST['year'];
 $time  = $_POST['time'];
-$days  = $_POST['days'];
+$daysArray  = $_POST['days'];
 $cap   = $_POST['cap'];
+$days = "";
+
+foreach($daysArray as $day){
+    $days = $days.$day;
+}
 
 $qStr = "INSERT INTO Sections(sectionID, courseID, instructorID, term, year, time, days, cap) VALUE('$sid', '$cid', '$iid', '$term', '$year', '$time', '$days', '$cap')";
 
