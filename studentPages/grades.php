@@ -10,9 +10,11 @@ if (!isset($_SESSION)) {
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Student Course Regsitration 2.0</title>
+  
 </head>
 
 <link rel="stylesheet" href="../css/master.css">
+
 <?php
 include("../php/bootstrap.php");
 ?>
@@ -22,40 +24,64 @@ include("../php/bootstrap.php");
   <?php
   include('menubar.php');
   ?>
-
+  
+  <BR>
+  
   <div class="main">
     <DIV class="container">
       <DIV class="row">
         <DIV class="col-md-12">
-          This is grades grades page
+          Grades for Alex E Example
+          
+          <BR></BR>
 
-          <table style="width:100%">
+          <table style="width:100%" border="1" cellspacing="0" cellpadding="5">
             <tr>
-              <th>Firstname</th>
-              <th>Lastname</th>
-              <th>Age</th>
+              <th>Course</th>
+              <th>Grade(GPA)</th>
             </tr>
             <tr>
-              <td>Jill</td>
-              <td>Smith</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <td>Eve</td>
-              <td>Jackson</td>
-              <td>94</td>
-            </tr>
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>80</td>
+              <td>Elementary Arabic</td>
+              <td>3.55</td>
             </tr>
           </table>
         </DIV>
       </DIV>
     </DIV>
   </div>
+  
+  <?php
+  $qStr = "SELECT name, Grade FROM Transcripts as T JOIN Sections as S ON T.sectionID = S.sectionID  JOIN Courses as C ON S.courseID = C.courseID;";
+	$qRes = $db->query($qStr);
 
+  echo "<div class='main'>
+  <DIV class='container'>
+  <DIV class='row'>
+  <DIV class='col-md-12'>
+  Grades for Alex E Example
+  <BR></BR>
+  <table style='width:100%' border='1' cellspacing='0' cellpadding='5'>
+  <tr>
+  <th>Course</th>
+  <th>Grade(GPA)</th>
+  </tr>";
+
+	while ($row = $qRes->fetch()) {
+	  echo "<tr>";
+    echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . $row['grade'] . "</td>";
+    echo "</tr>";
+  }
+  
+  echo "</table>
+  </DIV>
+  </DIV>
+  </DIV>
+  </div>";
+
+  ?> 
+  
 </body>
+
 
 </html>

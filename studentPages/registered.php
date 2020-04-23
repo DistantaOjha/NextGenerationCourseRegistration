@@ -22,35 +22,26 @@ include("../php/bootstrap.php");
   <?php
   include('menubar.php');
   ?>
+  
+  <BR>
 
   <div class="main">
     <DIV class="container">
       <DIV class="row">
         <DIV class="col-md-12">
-          This is grades registered page
+          Courses registered for Alex E Example
+          
+          <BR></BR>
 
-          <table style="width:100%">
+          <table style="width:100%" border="1" cellspacing="0" cellpadding="5">
             <tr>
-              <th>Firstname</th>
-              <th>Lastname</th>
-              <th>Age</th>
+              <th>Courses Registered</th>
             </tr>
             <tr>
-              <td>Jill</td>
-              <td>Smith</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <td>Eve</td>
-              <td>Jackson</td>
-              <td>94</td>
-            </tr>
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>80</td>
+              <td>Elementary Arabic</td>
             </tr>
           </table>
+          
         </DIV>
       </DIV>
     </DIV>
