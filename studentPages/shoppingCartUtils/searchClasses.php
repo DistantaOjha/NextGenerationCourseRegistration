@@ -20,7 +20,6 @@ if(!isset($_SESSION))
   width: 100px;
 }
 
-<style>
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
