@@ -40,8 +40,15 @@
     </DIV>   
     <DIV class="col-md-3 menuColumn">
       <form action="../index.php">
-        <button class = "textButton" type="submit">Logout</button>
+        <button class = "textButton" type="submit" onclick="logout()">Logout</button>
       </form>
     </DIV>    
   </DIV>
 </div>
+<script>
+function logout(){
+  session_start();
+  unset($_SESSION["username"]);
+  header("Location: ../index.php");
+}
+</script>

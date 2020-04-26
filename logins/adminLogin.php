@@ -1,12 +1,12 @@
 
-<form action="registrarPages/registrarLand.php" method="post" class = "loginForm">
+<form action="logins/php/login.php" method="post" class = "loginForm">
     <div>
-        <input type="hidden" name="table" value="regUsers">
+        <input type="hidden" name="table" value="RegistrarUsers">
         <p class = "loginTitle">Welcome Registrar</p>
         </br>
         <label for="ulogin" class = "loginLabel"><b>Username</b></label>
         </br>
-        <input type="text" class= "loginInputText" placeholder="Enter your username" name="ulogin">
+        <input type="text" class= "loginInputText" placeholder="Enter your username" name="login">
         </br>
         <label for="pass" class = "loginLabel"><b>Password</b></label>
         </br>

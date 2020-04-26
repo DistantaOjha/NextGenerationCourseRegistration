@@ -10,7 +10,7 @@ $logStr = "SELECT login FROM $table WHERE login = '$login';";
 $userRes = $db->query($logStr);
 
 //query user for pass correctness
-$passStr = "SELECT login FROM $table WHERE passHash = '$passHash';";
+$passStr = "SELECT login FROM $table WHERE pass = '$passHash';";
 //take query response
 $passRes = $db->query($passStr);
 $passRow = $passRes->fetch();
@@ -26,14 +26,5 @@ if($userRes->fetch() != FALSE){
     return -2;
 }
 return -1;
-
-}
-
-function addUser($db, $login, $pass, $email){
-//hash password
-$passHash = md5($pass);
-
-$qStr = "INSERT INTO user VALUE('$login', '$passHash', '$email');";
-$db->query($qStr);
 }
 ?>

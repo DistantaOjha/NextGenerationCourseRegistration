@@ -1,11 +1,12 @@
 
-<form action="instructorPages/instructorLand.php" method="post" class = "loginForm">
+<form action="logins/php/login.php" method="post" class = "loginForm">
     <div>
+        <input type="hidden" name="table" value="InstructorUsers">
         <p class = "loginTitle">Welcome Instructor</p>
         </br>
         <label for="ulogin" class = "loginLabel"><b>Username</b></label>
         </br>
-        <input type="text" class= "loginInputText" placeholder="Enter your username" name="ulogin">
+        <input type="text" class= "loginInputText" placeholder="Enter your username" name="login">
         </br>
         <label for="pass" class = "loginLabel"><b>Password</b></label>
         </br>
