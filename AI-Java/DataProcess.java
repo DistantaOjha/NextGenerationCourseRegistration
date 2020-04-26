@@ -57,7 +57,7 @@ public class DataProcess {
 
 		Scanner scan = new Scanner(System.in);
 		while(true){
-			String line = scan.nextLine().strip();
+			String line = scan.nextLine().trim();
 			if(line.equals("exit") || line.equals("")) {
 				break;
 			}
@@ -91,10 +91,10 @@ public class DataProcess {
 		line = line.replaceAll("\"", "");
 		String[] columns = line.split(",");
 		//System.out.println("Line after split is: " + Arrays.toString(columns));
-		String studentID = columns[0].strip();
-		String sectionID = columns[1].strip();
-		String placePref = columns[2].strip();
-		String capacity = columns[3].strip();
+		String studentID = columns[0].trim();
+		String sectionID = columns[1].trim();
+		String placePref = columns[2].trim();
+		String capacity = columns[3].trim();
 
 		//System.out.println("\nNew Data is: " + studentID + "	" + sectionID + "	" + placePref + "	" + capacity);
 
