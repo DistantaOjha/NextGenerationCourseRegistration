@@ -39,7 +39,7 @@ public class DataProcess {
 			String input = in.readLine();
 			if(input!=null) {
 				String[] eachLine = input.split("</br>");
-				System.out.println(Arrays.toString(eachLine));
+				//System.out.println(Arrays.toString(eachLine));
 				for(String line: eachLine) {
 					line = line.substring(1, line.length()-1);
 					processLine(line);
@@ -114,7 +114,7 @@ public class DataProcess {
 	private RegisterNode solve() {
 		RegisterNode solveNode = new RegisterNode(students, sections);
 		SimulatedAnnealer anneal = new SimulatedAnnealer(solveNode, 1, 0.8);
-		return anneal.search(1000);
+		return anneal.search(1000000);
 	}
 
 	public static void makeCSVFile(RegisterNode solvedNode) {
@@ -157,7 +157,7 @@ public class DataProcess {
 		dataprocess.populateDataFromURL();
 		//dataprocess.populateDataFromScanner();
 		RegisterNode solvedNode = dataprocess.solve();
-		System.out.println(solvedNode.toString());
+		//System.out.println(solvedNode.toString());
 		makeCSVFile(solvedNode);
 	}
 
