@@ -4,13 +4,21 @@ function checkUser($db, $table, $login, $pass){
 //hash password
 $passHash = md5($pass);
 
+if($table == 'RegistrarUsers'){
+    $var = 'rid';
+} else if($table == 'InstructorUsers'){
+    $var = 'iid';
+} else {
+    $var = 'sid';
+}
+
 //query user for user presence
-$logStr = "SELECT login FROM $table WHERE login = '$login';";
+$logStr = "SELECT $var FROM $table WHERE $var = '$login';";
 //take query response
 $userRes = $db->query($logStr);
 
 //query user for pass correctness
-$passStr = "SELECT login FROM $table WHERE pass = '$passHash';";
+$passStr = "SELECT $var FROM $table WHERE $var = '$passHash';";
 //take query response
 $passRes = $db->query($passStr);
 $passRow = $passRes->fetch();
@@ -20,7 +28,7 @@ $passRow = $passRes->fetch();
 //if password hash does not match, -2
 
 if($userRes->fetch() != FALSE){
-    if($login == $passRow{'login'}){
+    if($login == $passRow{$var}){
         return 1;
     }
     return -2;
