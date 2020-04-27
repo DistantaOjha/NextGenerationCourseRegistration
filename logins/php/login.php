@@ -19,7 +19,7 @@ include_once('../../php/dbconnect.php');
             header("Location: ../../instructorPages/instructorLand.php");
             exit;
         }        
-        if($table == 'InstructorUsers'){
+        if($table == 'StudentUsers'){
             header("Location: ../../studentPages/studentLand.php");
             exit;
         }
