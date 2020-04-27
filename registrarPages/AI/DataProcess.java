@@ -154,8 +154,8 @@ public class DataProcess {
 
 	public static void main(String[] args) throws Exception {
 		DataProcess dataprocess = new DataProcess();
-		//dataprocess.populateDataFromURL();
-		dataprocess.populateDataFromScanner();
+		dataprocess.populateDataFromURL();
+		//dataprocess.populateDataFromScanner();
 		RegisterNode solvedNode = dataprocess.solve();
 		System.out.println(solvedNode.toString());
 		makeCSVFile(solvedNode);
