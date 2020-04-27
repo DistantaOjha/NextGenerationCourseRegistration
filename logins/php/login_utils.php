@@ -13,22 +13,18 @@ if($table == 'RegistrarUsers'){
 }
 
 //query user for user presence
-$logStr = "SELECT $var FROM $table WHERE $var = '$login';";
+$logStr = "SELECT $var, pass FROM $table WHERE $var = '$login';";
 //take query response
 $userRes = $db->query($logStr);
 
-//query user for pass correctness
-$passStr = "SELECT $var FROM $table WHERE $var = '$passHash';";
-//take query response
-$passRes = $db->query($passStr);
-$passRow = $passRes->fetch();
-
-//if user is in table, email verified, pass matches, 1
+//if user is in table, pass matches, 1
 //if user does not exist, -1
 //if password hash does not match, -2
 
-if($userRes->fetch() != FALSE){
-    if($login == $passRow{$var}){
+$userRow = $userRes->fetch();
+
+if($userRow != FALSE){
+    if($passHash == $userRow{'pass'}){
         return 1;
     }
     return -2;
