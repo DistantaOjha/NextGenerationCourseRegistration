@@ -30,7 +30,7 @@ include_once("php/studentUtils.php");
         <DIV class="col-md-12">
           <?php
           include_once("../php/dbconnect.php");
-          showUserInformation($db);
+          showUserInformation($db, $_SESSION['username']);
           ?>
         </DIV>
       </DIV>

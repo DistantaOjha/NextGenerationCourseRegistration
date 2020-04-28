@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Add Instructor</title>
+  <title>Show Departments</title>
   <style>
     .addLine {
       color: rgb(204, 125, 7);
@@ -77,25 +77,28 @@ include_once("../php/dbconnect.php");
     <DIV class="container">
       <DIV class="row">
         <DIV class="col-md-12">
-          <h3>Add Instructor</h3>
-          <form action="php/addInstructorBackEnd.php" method="post" class="addForm">
-            <div>
-              </br>
-              <label for="insFName" class="addLabel"><b>Instructor First Name</b></label>
-              </br>
-              <input type="text" class="addInputText" placeholder="Enter Instructor First Name" name="insFName">
-              </br>
-              <label for="insMName" class="addLabel"><b>Instructor Middle Initial (MI)</b></label>
-              </br>
-              <input type="text" class="addInputText" placeholder="Enter Instructor MI" name="insMName">
-              </br>
-              <label for="insLName" class="addLabel"><b>Instructor Last Name</b></label>
-              </br>
-              <input type="text" class="addInputText" placeholder="Enter Instructor Last Name" name="insLName">
-              </br>
-              <button type="submit" class="addButton">Add Instructor</button>
-            </div>
-          </form>
+          <h3>Show Department</h3>
+          </hr>
+          <h3>Current Departments</h3>
+          <TABLE>
+            <?php
+            $str = "<TR><TD>deptID</TD><TD>Dep Name</TD><TD>chairID</TD></TR>\n";
+            print $str;
+            $qStr = "SELECT * FROM Departments;";
+            $qRes = $db->query($qStr);
+            if ($qRes != FALSE) {
+              $nRows = $qRes->rowCount();
+              $nCols = $qRes->columnCount();
+              while ($row = $qRes->fetch()) {
+                $deptID = $row['deptID'];
+                $chairID = $row['headID'];
+                $name = $row['name'];
+                $str = "<TR><TD>$deptID</TD><TD>$name</TD><TD>$chairID</TD></TR>\n";
+                print $str;
+              }
+            }
+            ?>
+          </TABLE>
         </DIV>
       </DIV>
     </DIV>

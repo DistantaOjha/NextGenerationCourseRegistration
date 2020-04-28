@@ -137,30 +137,8 @@ td, th {
   </div>
 </form>
 </hr>
-<h3>Current Students</h3>
-<TABLE>
-<?php
-//	studentID 	year 	fname 	mi 	lname
-$str = "<TR><TD>ID</TD><TD>FName</TD><TD>MI</TD><TD>LName</TD><TD>Year</TD></TR>\n";
-print $str;
-include_once("../php/dbconnect.php");
-$qStr = "SELECT * FROM Students;";
-$qRes = $db->query($qStr);
-if($qRes != FALSE){
-  while($row = $qRes->fetch()){
-    $insID = $row['studentID'];
-    $fname = $row['fname'];
-    $mi = $row['mi'];
-    $lname = $row['lname'];
-    $year = $row['year'];
-    $str = "<TR><TD>$insID</TD><TD>$fname</TD><TD>$mi</TD><TD>$lname</TD><TD>$year</TD></TR>\n";
-    print $str;
-  }
-}
-?>
-</TABLE>
-    </DIV>
-  </DIV>
+</DIV>
+</DIV>
 </DIV>
 </div>
 </body>

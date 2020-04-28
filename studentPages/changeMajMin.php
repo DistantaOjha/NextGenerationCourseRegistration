@@ -26,7 +26,8 @@ if(!isset($_SESSION))
   // the message
   $major = $_POST['major'];
   $minor = $_POST['minor'];
-  $msg = "Alex would like to change his/her major/minor.\nMajor Change: $major \nMinor Change: $minor";
+  $username = 
+  $msg = "would like to change his/her major/minor.\nMajor Change: $major \nMinor Change: $minor";
   
   // send email
   mail("jeteay01@gettysburg.edu","Student Major/Minor Change", $msg);

@@ -1,8 +1,8 @@
 <?php
-function showUserInformation($db)
+function showUserInformation($db, $username)
 {
 //select students from "Student" table(need to be shown)
-    $qStr1 = "SELECT * FROM Students WHERE studentID = '123456';";
+    $qStr1 = "SELECT * FROM Students WHERE studentID = $username;";
     $qRes1 = $db->query($qStr1);
     if ($qRes1 != FALSE){
 

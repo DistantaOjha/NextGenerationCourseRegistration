@@ -1,7 +1,17 @@
 <DIV class="container">
   <DIV class="row">
       <DIV class="col-md-12 titleBar">
-        <h1>Welcome, Username!</h1>
+        <h1><?php 
+          include_once("../php/dbconnect.php");
+          $username = $_SESSION['username'];
+          $str = "SELECT fname, lname FROM Students WHERE studentID = $username;";
+          $qRes = $db->query($str);
+          $row = $qRes->fetch();
+          $fname = $row['fname'];
+          $lname = $row['lname'];
+          echo "Welcome - " . $fname . "  " .  $lname. "!";
+        ?>
+        </h1>
       </DIV>
   </DIV>
   <div class="row">

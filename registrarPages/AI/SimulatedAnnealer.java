@@ -47,13 +47,11 @@ public class SimulatedAnnealer {
 
 	public RegisterNode search(int iterations) 
 	{
-		System.out.println("minEnergy" 
-				+ "\t" + "energy");
+		//System.out.println("minEnergy" + "\t" + "energy");
 		double temperature = initTemp; // ***
 		for (int i = 0; i < iterations; i++) {
 			if (i % 100 == 0) 
-				System.out.println(minEnergy 
-						+ "\t" + energy);
+				//System.out.println(minEnergy + "\t" + energy);
 			registerNode.step();
 			double nextEnergy = registerNode.energy();
 			if (nextEnergy <= energy 

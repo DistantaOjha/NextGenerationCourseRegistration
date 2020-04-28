@@ -111,27 +111,6 @@ include_once("../php/dbconnect.php");
               </br>
             </div>
           </form>
-          </hr>
-          <h3>Current Departments</h3>
-          <TABLE>
-            <?php
-            $str = "<TR><TD>deptID</TD><TD>Dep Name</TD><TD>chairID</TD></TR>\n";
-            print $str;
-            $qStr = "SELECT * FROM Departments;";
-            $qRes = $db->query($qStr);
-            if ($qRes != FALSE) {
-              $nRows = $qRes->rowCount();
-              $nCols = $qRes->columnCount();
-              while ($row = $qRes->fetch()) {
-                $deptID = $row['deptID'];
-                $chairID = $row['headID'];
-                $name = $row['name'];
-                $str = "<TR><TD>$deptID</TD><TD>$name</TD><TD>$chairID</TD></TR>\n";
-                print $str;
-              }
-            }
-            ?>
-          </TABLE>
         </DIV>
       </DIV>
     </DIV>
