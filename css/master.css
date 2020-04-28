@@ -18,6 +18,9 @@
     padding: 10px;
     
 }
+.menuColumn:hover{
+    opacity: 0.8;
+}
 .mainBox {
     background-color: white;
     text-align: center;
@@ -73,7 +76,13 @@
     width: 100%;
 }
 
-.dropButton:hover .dropButtonContent {display: block;}
+.dropButton:hover {
+    opacity: 0.8;
+}
+.dropButton:hover .dropButtonContent {
+    display: block;
+    width: 90%;
+}
 
 .loginButton {
     background-color: var(--blue);
@@ -82,10 +91,6 @@
     padding: 12px 20px;
     margin-left: var(--loginMarg);
     width: 75%;
-}
-
-.textButton:hover .loginButton:hover{
-    opacity: .8; 
 }
 
 .loginInputText, .loginInputPass {
@@ -136,6 +141,10 @@
     margin: 3.5%;
     border: none;
     width: 42%;
+}
+
+.textButton:hover .loginButton:hover .formBtn:hover{
+    opacity: .8; 
 }
 
 .formTitle{
