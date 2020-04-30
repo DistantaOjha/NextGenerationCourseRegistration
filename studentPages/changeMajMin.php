@@ -1,4 +1,5 @@
 <?php
+#AUTHOR: Tullah
 if(!isset($_SESSION)) 
     { 
         session_start(); 

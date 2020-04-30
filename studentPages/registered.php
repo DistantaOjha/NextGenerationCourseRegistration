@@ -1,4 +1,5 @@
 <?php
+#AUTHOR: DISTANTA OJHA
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -84,19 +85,39 @@ include_once("../php/dbconnect.php");
 <body>
 
   <?php
-  include('menubar.php');
-  
-  
-  
-  
-  
+  include('menubar.php');  
   ?>
 
 
   <div class="main">
-  
-  </div> 
-
+    <DIV class="container">
+      <DIV class="row">
+        <DIV class="col-md-12">
+          <BR><BR>
+          <TABLE>
+          <TR><TH>Course Name</TH><TH>Section</TH><TH>Time</TH><TH>Days</TH><TH>Instructor</TH></TR>
+          <?php
+              $studentID = $_SESSION['username'];
+              $qRes = $db->query("SELECT name,sectionLetter,time,days,fname,lname FROM registration NATURAL JOIN Sections NATURAL JOIN Courses NATURAL JOIN Instructors WHERE studentID = $studentID;");
+              if($qRes != False){
+                while ($row = $qRes->fetch()) {
+                  #print_r($row);
+	                $cName = $row['name'];
+                  $secLetter =  $row['sectionLetter'];
+                  $time = $row['time'];
+                  $days = $row['days'];
+                  $fname =  $row['fname'];
+                  $lname = $row['lname'];
+                  $insName = $lname .  ", " . $fname;
+                  print "<TR><TD>$cName</TD><TD>$secLetter</TD><TD>$time</TD><TD>$days</TD><TD>$insName</TD></TR>";               
+                }  
+              }
+          ?>
+          </TABLE>
+        </DIV>
+      </DIV>
+    </DIV>
+  </div>
 </body>
 
 </html>

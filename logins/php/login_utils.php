@@ -1,6 +1,6 @@
 <?php
 function checkUser($db, $table, $login, $pass){
-
+//Author Issac
 //hash password
 $passHash = md5($pass);
 

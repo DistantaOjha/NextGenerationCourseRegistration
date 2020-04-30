@@ -1,3 +1,5 @@
+
+<!-- Issac -->
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -7,7 +9,7 @@ if (!isset($_SESSION)) {
 
 <!DOCTYPE html>
 <html>
-
+<!-- Author Issac -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Student Course Regsitration 2.0</title>

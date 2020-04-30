@@ -1,4 +1,5 @@
 <?php
+//Author Distanta
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -27,7 +28,7 @@ include("../php/bootstrap.php");
         <DIV class="col-md-12">
           Please Confirm the following CSV file you want to add as registration data </br> 
           <a href= "registration.csv">Open the CSV file</a>
-          <form action="AI/registerClasses.php">
+          <form action="registerClasses.php">
             <p><input type="checkbox" required name="terms"> I confirm the registration data</p>
             <button type="submit">Confirm</button>
           </form>

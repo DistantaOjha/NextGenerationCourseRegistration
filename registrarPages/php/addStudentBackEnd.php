@@ -1,5 +1,5 @@
 <?php
-
+#AUTHOR: DISTANTA OJHA
   include_once("../../php/dbconnect.php");
 
    $fname = $_POST['stuFName'];

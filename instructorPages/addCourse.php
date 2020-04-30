@@ -1,4 +1,5 @@
 <?php
+//Author Issac
 if(!isset($_SESSION)) 
     { 
         session_start(); 

@@ -1,5 +1,6 @@
+//Author Distanta
 public class Student {
-
+  
 	private String studentID;
 	private String[] firstPref;
 	private String[] secondPref;

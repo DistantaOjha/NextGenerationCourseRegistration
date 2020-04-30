@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Author Distanta
 public class Section {
 
 	private String sectionID;

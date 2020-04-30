@@ -1,4 +1,5 @@
 <?php
+//Distanta Ojha
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -8,18 +9,20 @@ if (!isset($_SESSION)) {
 <html>
 
 <head>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Student Course Regsitration 2.0</title>
 </head>
-
+<link rel="stylesheet" href="../css/master.css">
 <body>
   <?php
-  include_once("../../php/dbconnect.php");
+  include("../php/bootstrap.php");
+  include_once("../php/dbconnect.php");
+  include('menubar.php');
   ?>
   <div class="main">
     <DIV class="container">
       <?php
-        $qRes = $db->query("DELETE FROM registration WHERE 1");
         $myfile = fopen("registration.csv", "r") or die("Unable to open file!");
         fgets($myfile); //trash the column names
         while(!feof($myfile)) {
@@ -29,14 +32,17 @@ if (!isset($_SESSION)) {
             $sectionID = chop($sectionID);
             if($sectionID != '' && $studentID != ''){
                 $str = "INSERT INTO registration(studentID, sectionID) VALUES ($studentID, $sectionID);";
+                $delStr = "DELETE FROM ShoppingCart WHERE studentID = $studentID;";
+                #print_r($delStr."<br>");
+                $qDel = $db->query($delStr);
                 #print $str;
                 $qRes = $db->query($str);
             }
         }
+        print "Successfully registered";
         fclose($myfile);
       ?>
     </DIV>
   </div>
-  <a href="../registrarLand.php"><h1> Go BACK <h1></a>
 </body>
 </html>

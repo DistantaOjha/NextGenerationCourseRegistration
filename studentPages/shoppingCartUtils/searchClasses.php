@@ -1,4 +1,5 @@
 <?php
+#AUTHOR DISTANTA OJHA
 if(!isset($_SESSION)) 
     { 
         session_start(); 
@@ -12,7 +13,7 @@ if(!isset($_SESSION))
   <title>Student Course Regsitration 2.0</title>
 </head>
 
-<link rel="stylesheet" href="../../css/dashboard.css">
+<link rel="stylesheet" href="../../css/master.css">
 
 <style>
 
@@ -88,7 +89,6 @@ tr:hover{
 <body>
 
 <?php
-  include('../sidebar.php');
   include_once('../../php/dbconnect.php')
 ?>
 

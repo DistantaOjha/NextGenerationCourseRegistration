@@ -1,4 +1,5 @@
 <?php
+#AUTHOR: DISTANTA OJHA
 include_once("../../php/dbconnect.php");
 $qStr = "SELECT studentID, sectionID, placePref, seats FROM ShoppingCart NATURAL JOIN Sections";
 $qRes = $db->query($qStr);

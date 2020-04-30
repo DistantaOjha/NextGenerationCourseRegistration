@@ -1,4 +1,6 @@
 <?php
+#SHOW INFORMATION AUTHOR: EMILY
+#CHANGE MAJOR MINOR: Tullah
 if (!isset($_SESSION)) {
   session_start();
 }

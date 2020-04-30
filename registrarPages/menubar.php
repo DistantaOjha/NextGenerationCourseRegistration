@@ -1,3 +1,4 @@
+<!-- Issac -->
 <DIV class="container">
   <DIV class="row">
       <DIV class="col-md-12 titleBar">
@@ -49,10 +50,10 @@
     <DIV class="col-md-3 dropButton">
       <button class = "textButton">AI</button>
       <div class="dropButtonContent">
-        <form action="AI/runJava.php">
+        <form action="runJava.php">
           <button class="dropInnerButton" type="submit">Run Next Generation AI</button>
         </form>
-        <form action="AI/viewCurrentCSV.php">
+        <form action="viewCurrentCSV.php">
           <button class="dropInnerButton" type="submit">View AI Suggestion</button>
         </form>
         <form action="registerClassesConfirm.php">

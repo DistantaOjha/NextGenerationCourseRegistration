@@ -1,4 +1,5 @@
 <?php
+#AUTHOR: EMILY
 function showUserInformation($db, $username)
 {
 //select students from "Student" table(need to be shown)

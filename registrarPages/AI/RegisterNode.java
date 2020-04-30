@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
-
+//Author Distanta
 public class RegisterNode {
 
 	private TreeMap<String, Student> students;
